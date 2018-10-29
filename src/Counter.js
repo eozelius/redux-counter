@@ -36,7 +36,7 @@ class Counter extends Component {
         </div>
 
         <div className='mutate-count'>
-          <Button handleClick={this.handleIncrement}>Increment</Button>
+          <Button handleClick={this.handleIncrement} />
           <Button handleClick={this.handleDecrement}>Decrement</Button>
         </div>
       </div>
