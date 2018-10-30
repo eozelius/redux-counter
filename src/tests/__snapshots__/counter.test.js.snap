@@ -1,5 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Counter has an initial count of 0 1`] = `
+<Counter
+  count={0}
+>
+  <div
+    className="counter"
+  >
+    <div
+      className="count"
+    >
+      <h2>
+        Counter
+      </h2>
+      0
+    </div>
+    <div
+      className="mutate-count"
+    >
+      <Button
+        className="increment-btn"
+      >
+        <button
+          style={
+            Object {
+              "margin": "5%",
+            }
+          }
+        >
+          Increment
+        </button>
+      </Button>
+      <Button
+        className="decrement-btn"
+      >
+        <button
+          style={
+            Object {
+              "margin": "5%",
+            }
+          }
+        >
+          Decrement
+        </button>
+      </Button>
+    </div>
+  </div>
+</Counter>
+`;
+
 exports[`Counter renders properly 1`] = `
 <div
   className="counter"
@@ -10,20 +59,17 @@ exports[`Counter renders properly 1`] = `
     <h2>
       Counter
     </h2>
-    0
   </div>
   <div
     className="mutate-count"
   >
     <Button
       className="increment-btn"
-      handleClick={[Function]}
     >
       Increment
     </Button>
     <Button
       className="decrement-btn"
-      handleClick={[Function]}
     >
       Decrement
     </Button>

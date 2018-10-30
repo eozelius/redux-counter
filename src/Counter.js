@@ -3,8 +3,7 @@ import Button from './shared/Button'
 import { incrementCounter, decrementCounter } from './actions.js'
 import { connect } from 'react-redux'
 
-
-class Counter extends Component {
+export class Counter extends Component {
   render(){
     return (
       <div className='counter'>

@@ -21,6 +21,6 @@ describe('Button', () => {
     const handleClick = jest.fn()
     const btn = shallow(<Button handleClick={handleClick} />)
     btn.simulate('click', {})
-    expect(handleClick).toBeCalledWith({})
+    expect(handleClick).toBeCalled()
   })
 })
