@@ -9,12 +9,12 @@ describe('Button', () => {
 
   it('should render the child text', () => {
     const btn = shallow(<Button>testing 123</Button>)
-    expect(btn.props('children').children).toEqual('testing 123')
+    expect(btn.prop('children')).toEqual('testing 123')
   })
 
   it('defaults to "click"', () => {
     const btn = shallow(<Button />)
-    expect(btn.props('children')['children']).toEqual('click')
+    expect(btn.prop('children')).toEqual('click')
   })
 
   it('invokes the handleClick callback passed via props', () => {

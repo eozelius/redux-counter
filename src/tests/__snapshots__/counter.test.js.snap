@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter renders properly 1`] = `
+<div
+  className="counter"
+>
+  <div
+    className="count"
+  >
+    <h2>
+      Counter
+    </h2>
+    0
+  </div>
+  <div
+    className="mutate-count"
+  >
+    <Button
+      className="increment-btn"
+      handleClick={[Function]}
+    >
+      Increment
+    </Button>
+    <Button
+      className="decrement-btn"
+      handleClick={[Function]}
+    >
+      Decrement
+    </Button>
+  </div>
+</div>
+`;

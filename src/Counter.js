@@ -6,7 +6,7 @@ class Counter extends Component {
     super(props)
 
     this.state = {
-      count: 5
+      count: 0
     }
 
     this.handleIncrement = this.handleIncrement.bind(this)
@@ -36,8 +36,8 @@ class Counter extends Component {
         </div>
 
         <div className='mutate-count'>
-          <Button handleClick={this.handleIncrement} />
-          <Button handleClick={this.handleDecrement}>Decrement</Button>
+          <Button className='increment-btn' handleClick={this.handleIncrement}>Increment</Button>
+          <Button className='decrement-btn' handleClick={this.handleDecrement}>Decrement</Button>
         </div>
       </div>
     )
