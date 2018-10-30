@@ -15,6 +15,7 @@ describe('redux Counter Actions', () => {
     }]
     store.dispatch(incrementCounter())
     expect(store.getActions()).toEqual(expectedAction)
+    expect(store.getActions()).toMatchSnapshot()
   })
 
   it('produces a decrement action', () => {
@@ -23,5 +24,6 @@ describe('redux Counter Actions', () => {
     }]
     store.dispatch(decrementCounter())
     expect(store.getActions()).toEqual(expectedAction)
+    expect(store.getActions()).toMatchSnapshot()
   })
 })
