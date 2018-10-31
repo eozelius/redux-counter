@@ -1,7 +1,7 @@
 import { INCREMENT, DECREMENT, incrementCounter, decrementCounter } from '../actions.js'
 import counterReducer from '../reducers'
 
-describe('redux Counter Actions', () => {
+describe('Counter redux Actions', () => {
   it('defaults to the initial state', () => {
     const action = { type: 'dummy_action' }
     const initialState = { count: 0 }

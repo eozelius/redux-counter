@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Button from './shared/Button'
-import { incrementCounter, decrementCounter } from './actions.js'
+import { incrementCounter, decrementCounter, asyncIncDec } from './actions.js'
 import { connect } from 'react-redux'
 
 export class Counter extends Component {
@@ -15,6 +15,8 @@ export class Counter extends Component {
         <div className='mutate-count'>
           <Button className='increment-btn' handleClick={this.props.increment}>Increment</Button>
           <Button className='decrement-btn' handleClick={this.props.decrement}>Decrement</Button>
+          <Button className='async-increment' handleClick={this.props.asyncIncrement}>Async Increment</Button>
+          <Button className='async-decrement' handleClick={this.props.asyncDecrement}>Async Decrement</Button>
         </div>
       </div>
     )
@@ -30,7 +32,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     increment: () => dispatch(incrementCounter()),
-    decrement: () => dispatch(decrementCounter())
+    decrement: () => dispatch(decrementCounter()),
+    asyncIncrement: () => dispatch(asyncIncDec('increment')),
+    asyncDecrement: () => dispatch(asyncIncDec('decrement')),
   }
 }
 
