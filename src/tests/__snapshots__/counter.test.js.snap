@@ -44,6 +44,32 @@ exports[`Counter has an initial count of 0 1`] = `
           Decrement
         </button>
       </Button>
+      <Button
+        className="async-increment"
+      >
+        <button
+          style={
+            Object {
+              "margin": "5%",
+            }
+          }
+        >
+          Async Increment
+        </button>
+      </Button>
+      <Button
+        className="async-decrement"
+      >
+        <button
+          style={
+            Object {
+              "margin": "5%",
+            }
+          }
+        >
+          Async Decrement
+        </button>
+      </Button>
     </div>
   </div>
 </Counter>
@@ -72,6 +98,16 @@ exports[`Counter renders properly 1`] = `
       className="decrement-btn"
     >
       Decrement
+    </Button>
+    <Button
+      className="async-increment"
+    >
+      Async Increment
+    </Button>
+    <Button
+      className="async-decrement"
+    >
+      Async Decrement
     </Button>
   </div>
 </div>

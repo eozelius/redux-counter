@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`redux Counter Actions decrements the count 1`] = `
+exports[`Counter redux Actions decrements the count 1`] = `
 Object {
   "count": -2,
 }
 `;
 
-exports[`redux Counter Actions increments the count 1`] = `
+exports[`Counter redux Actions increments the count 1`] = `
 Object {
   "count": 2,
 }
