@@ -16,20 +16,19 @@ With a focus on Async Redux thunks and testing with Enzyme and Jest.
   I use redux-thunk middleware, keeping my actions pure by returning a function, that returns a promise from the action creator that will be invoked by middleware.  If the promise resolves successfully, it will dispatch the immediate increment/decrement actions.
 
 ### Testing
-- I am using Enzyme and Jest.
-  - **Snapshot testing** - test rendered output of components.
+- **Snapshot testing** - test rendered output of components.
   ```javascript
   const btn = shallow(<Button />)
   expect(btn).toMatchSnapshot()
   ```
 
-  - **Props testing**
+- **Props testing**
   ```javascript
   const counter = mount(<Counter count={0} />)
   expect(counter.prop('count')).toEqual(0)
   ```
 
-  - **Events testing**
+- **Events testing**
   ```javascript
   const handleClick = jest.fn()
   const btn = shallow(<Button handleClick={handleClick} />)
@@ -37,7 +36,7 @@ With a focus on Async Redux thunks and testing with Enzyme and Jest.
   expect(handleClick).toBeCalled()
   ```
 
-  - **Redux Actions Testing**
+- **Redux Actions Testing**
   ```javascript
   const expectedAction = [{
     type: INCREMENT
@@ -46,7 +45,7 @@ With a focus on Async Redux thunks and testing with Enzyme and Jest.
   expect(store.getActions()).toEqual(expectedAction)
   ```
 
-  - **Redux Reducers Testing**
+- **Redux Reducers Testing**
   ```javascript
   const initialState = { count: 0 }
   const action = incrementCounter()
@@ -56,7 +55,7 @@ With a focus on Async Redux thunks and testing with Enzyme and Jest.
   expect(counterReducer(initialState, action)).toEqual(expectedState)
   ```
 
-  - **Redux Async Thunks Testing**
+- **Redux Async Thunks Testing**
     This requires a mockStore, see the [redux async testing docs](https://redux.js.org/recipes/writingtests#async-action-creators)
   ```javascript
   return store.dispatch(asyncIncDec('decrement'))
