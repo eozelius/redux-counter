@@ -37,8 +37,7 @@ With a focus on Async Redux thunks and testing with Enzyme and Jest.
   expect(handleClick).toBeCalled()
   ```
 
-  - *Redux Testing*
-    - Actions
+  - *Redux Actions Testing*
   ```javascript
   const expectedAction = [{
     type: INCREMENT
@@ -46,7 +45,8 @@ With a focus on Async Redux thunks and testing with Enzyme and Jest.
   store.dispatch(incrementCounter())
   expect(store.getActions()).toEqual(expectedAction)
   ```
-    - Reducers
+
+  - **Redux Reducers Testing**
   ```javascript
   const initialState = { count: 0 }
   const action = incrementCounter()
@@ -54,5 +54,14 @@ With a focus on Async Redux thunks and testing with Enzyme and Jest.
     count: 1
   }
   expect(counterReducer(initialState, action)).toEqual(expectedState)
+  ```
+
+  - **Redux Async Thunks Testing**
+    This requires a mockStore, see the [redux async testing docs](https://redux.js.org/recipes/writingtests#async-action-creators)
+  ```javascript
+  return store.dispatch(asyncIncDec('decrement'))
+    .then((response) => {
+      expect(store.getActions()).toEqual(expectedAction)
+    })
 
   ```
