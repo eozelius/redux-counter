@@ -6,6 +6,7 @@ const NumberPad = (props) => {
   return(
     <div className='numberPadContainer'>
       { numbers.map((n, i) => <CalculatorButton onClick={props.handleNumber} display={n} key={i} />) }
+      <CalculatorButton onClick={props.handleCalculate} display='=' />
     </div>
   )
 }

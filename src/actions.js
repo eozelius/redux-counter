@@ -28,8 +28,8 @@ export function asyncIncDec(incOrDec){
       } else if(incOrDec === 'decrement'){
         dispatch(decrementCounter())
       } else {
-        throw("Increment or Decrement must be defined")
-        return
+        console.log("Increment or Decrement must be defined")
+        return false
       }
     })
     .catch((error) => { console.log("error: " + error) })

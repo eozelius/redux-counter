@@ -3,7 +3,6 @@ import './styles/Calculator.sass'
 import NumberPad from './NumberPad'
 import CalculatorDisplay from './CalculatorDisplay'
 import OperatorPad from './OperatorPad'
-import CalculatorButton from './CalculatorButton'
 
 class Calculator extends Component {
   constructor(props){
@@ -72,8 +71,7 @@ class Calculator extends Component {
     return(
       <div className='calculatorContainer' >
         <CalculatorDisplay number={this.state.displayNum} />
-        <CalculatorButton className='executeResult' onClick={this.calculate} display='=' />
-        <NumberPad handleNumber={this.handleNumber} />
+        <NumberPad handleNumber={this.handleNumber} handleCalculate={this.calculate} />
         <OperatorPad handleOperator={this.handleOperator} />
       </div>
     )
