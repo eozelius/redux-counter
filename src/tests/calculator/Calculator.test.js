@@ -42,7 +42,15 @@ describe(Calculator, () => {
     expect(calc.state('operator')).toEqual(divide.prop('children').toString())
   })
 
-  test('it calculates division result', () => {
+  test('handles Number input', () => {
+    const spy = jest.spyOn(Calculator.prototype, 'handleNumber')
+    const calc = mount(<Calculator />)
+    const nine = calc.find('.calcBtn').at(1)
+    nine.simulate('click', {target: { innerText: nine.prop('display') }})
+    expect(spy).toHaveBeenCalled()
+  })
+
+  test('it calculates result', () => {
     const calc = mount(<Calculator />)
     const nine = calc.find(CalculatorButton).at(1)
     const divide = calc.find('.operatorContainer .calcBtn').last()

@@ -15,9 +15,11 @@ class Calculator extends Component {
       displayNum: '',
       complete: false
     }
+
+    this.handleNumber = this.handleNumber.bind(this)
   }
 
-  handleNumber = (e) => {
+  handleNumber(e){
     if(this.state.complete){
       const number = `${e.target.innerText}`
       this.setState({
