@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumberPad mounts properly 1`] = `
+<div
+  className="numberPadContainer"
+>
+  <CalculatorButton
+    display={9}
+    key="0"
+  />
+  <CalculatorButton
+    display={8}
+    key="1"
+  />
+  <CalculatorButton
+    display={7}
+    key="2"
+  />
+  <CalculatorButton
+    display={6}
+    key="3"
+  />
+  <CalculatorButton
+    display={5}
+    key="4"
+  />
+  <CalculatorButton
+    display={4}
+    key="5"
+  />
+  <CalculatorButton
+    display={3}
+    key="6"
+  />
+  <CalculatorButton
+    display={2}
+    key="7"
+  />
+  <CalculatorButton
+    display={1}
+    key="8"
+  />
+  <CalculatorButton
+    display={0}
+    key="9"
+  />
+  <CalculatorButton
+    display="."
+    key="10"
+  />
+</div>
+`;

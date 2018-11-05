@@ -3,6 +3,7 @@ import Counter from './Counter'
 import './App.sass';
 import { Provider } from 'react-redux'
 import configureStore from './configureStore'
+import Calculator from './Calculator'
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <Counter />
+          <Calculator />
         </div>
       </Provider>
     );

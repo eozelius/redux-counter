@@ -28,7 +28,7 @@ export function asyncIncDec(incOrDec){
       } else if(incOrDec === 'decrement'){
         dispatch(decrementCounter())
       } else {
-        console.log("error: Increment or Decrement must be defined")
+        throw("Increment or Decrement must be defined")
         return
       }
     })
