@@ -48,5 +48,9 @@ exports[`NumberPad mounts properly 1`] = `
     display="."
     key="10"
   />
+  <CalculatorButton
+    className="executeResult"
+    display="="
+  />
 </div>
 `;

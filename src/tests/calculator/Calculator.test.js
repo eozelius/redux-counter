@@ -1,6 +1,7 @@
 import Calculator from '../../Calculator'
 import React from 'react'
 import CalculatorButton from '../../CalculatorButton'
+import NumberPad from '../../NumberPad'
 
 describe(Calculator, () => {
   test('mounts properly', () => {
@@ -14,21 +15,20 @@ describe(Calculator, () => {
       secondNum: '',
       operator: null,
       displayNum: '',
-      complete: false
     }
     const calc = shallow(<Calculator />)
     expect(calc.state()).toEqual(expectedState)
   })
 
   test('it handles number input', () => {
-    const calc = mount(<Calculator />)
-    const nine = calc.find(CalculatorButton).at(2)
-    nine.simulate('click', {
+    const calc = shallow(<Calculator />)
+    const btn = calc.find(NumberPad)
+    btn.prop('handleNumber')({
       target: {
-        innerText: nine.prop('display')
+        innerText: '9'
       }
     })
-    expect(calc.state('firstNum')).toEqual(nine.prop('display').toString())
+    expect(calc.state('firstNum')).toEqual('9')
   })
 
   test('it handles operator input', () => {
@@ -60,23 +60,18 @@ describe(Calculator, () => {
     nine.simulate('click', {target: { innerText: nine.prop('display') }})
     equal.simulate('click')
     expect(calc.state('displayNum')).toEqual('1')
-    expect(calc.state('complete')).toEqual(true)
   })
 
-  test('it resets state after "=" button pressed', () => {
+  test('it resets state after "=" button is pressed', () => {
     const calc = mount(<Calculator />)
-    calc.setState({
-      complete: true
-    })
-    const nine = calc.find(CalculatorButton).at(1)
+    const eight = calc.find(CalculatorButton).at(1)
     const expectedState = {
-      firstNum: '9',
+      firstNum: '8',
       secondNum: '',
       operator: null,
-      displayNum: '9',
-      complete: false
+      displayNum: '8'
     }
-    nine.simulate('click', {target: { innerText: nine.prop('display') }})
+    eight.simulate('click', {target: { innerText: '8' }})
     expect(calc.state()).toEqual(expectedState)
   })
 })
