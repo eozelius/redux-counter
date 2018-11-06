@@ -11,27 +11,20 @@ class Calculator extends Component {
       firstNum: '',
       secondNum: '',
       operator: null,
-      displayNum: '',
-      complete: false
+      displayNum: ''
     }
 
     this.handleNumber = this.handleNumber.bind(this)
   }
 
   handleNumber(e){
-    if(this.state.complete){
-      const number = `${e.target.innerText}`
-      this.setState({
-        displayNum: number,
-        firstNum: number,
-        complete: false
-      })
-      return
+    let number = `${this.state.displayNum}${e.target.innerText}`
+    if(this.state.firstNum === ''){
+      number = `${e.target.innerText}`
     }
 
     // user is inputing X
     if(this.state.operator === null){
-      const number = `${this.state.displayNum}${e.target.innerText}`
       this.setState({
         displayNum: number,
         firstNum: number
@@ -62,8 +55,7 @@ class Calculator extends Component {
       displayNum: `${result}`,
       firstNum: '',
       secondNum: '',
-      operator: null,
-      complete: true
+      operator: null
     })
   }
 
